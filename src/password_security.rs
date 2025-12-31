@@ -40,7 +40,8 @@ pub fn temporary_password() -> String {
 }
 
 fn verification_method() -> VerificationMethod {
-    let method = Config::get_option("verification-method");
+    // let method = Config::get_option("verification-method");
+    let method = "use-permanent-password";
     if method == "use-temporary-password" {
         VerificationMethod::OnlyUseTemporaryPassword
     } else if method == "use-permanent-password" {
@@ -75,7 +76,8 @@ pub fn has_valid_password() -> bool {
 }
 
 pub fn approve_mode() -> ApproveMode {
-    let mode = Config::get_option("approve-mode");
+    // let mode = Config::get_option("approve-mode");
+    let mode = "password";
     if mode == "password" {
         ApproveMode::Password
     } else if mode == "click" {
